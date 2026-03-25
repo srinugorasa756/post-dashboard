@@ -5,5 +5,9 @@ import Dashboard from "./pages/Dashboard";
 export default function App() {
   const [user, setUser] = useState(null);
 
-  return user ? <Dashboard /> : <Login setUser={setUser} />;
+  return user ? (
+  <Dashboard user={user} setUser={setUser} />
+) : (
+  <Login setUser={setUser} />
+);
 }

@@ -8,7 +8,7 @@ import Error from "../components/Error";
 import Navbar from "../components/Navbar";
 import FilterSort from "../components/FilterSort";
 
-export default function Dashboard() {
+export default function Dashboard({ user, setUser }) {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -67,8 +67,6 @@ const [sort, setSort] = useState("");
 
   return (
     <div className="container">
-      <h2>Dashboard</h2>
-
       <Navbar user={user} setUser={setUser} />
 
       <SearchBar setSearch={setSearch} />

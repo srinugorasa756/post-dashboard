@@ -69,13 +69,16 @@ const [sort, setSort] = useState("");
     <div className="container">
       <Navbar user={user} setUser={setUser} />
 
-      <SearchBar setSearch={setSearch} />
+      <div className="controls">
+    <SearchBar setSearch={setSearch} />
+    <FilterSort setFilter={setFilter} setSort={setSort} />
+  </div>
 
-      <FilterSort setFilter={setFilter} setSort={setSort} />
-
-      {paginatedPosts.map(post => (
-        <PostCard key={post.id} post={post} />
-      ))}
+      <div className="posts-grid">
+    {paginatedPosts.map(post => (
+      <PostCard key={post.id} post={post} />
+    ))}
+  </div>
 
       <Pagination
         total={filteredPosts.length}
